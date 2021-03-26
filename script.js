@@ -77,18 +77,19 @@ document.querySelector(".tombol").addEventListener('click', function () {
                             }).then((result) => {
                               /* Read more about isConfirmed, isDenied below */
                               if (result.isConfirmed) {
-                                Swal.fire('Aku Tunggu', '', '').then(function () {
+                                Swal.fire('Ayo Kapan', '', '').then(function () {
+                                  const {
+                                    value: text
+                                  } =
                                   Swal.fire({
-                                    input: 'textarea',
+                                    input: 'text',
                                     inputLabel: 'Deskripsikan Seorang Rezqy',
                                     inputPlaceholder: 'Type your message here...',
-                                    inputAttributes: {
-                                      'aria-label': 'Type your message here'
-                                    },
                                     showCancelButton: true
                                   })
-                                })
-                                Swal.fire('Terakhir deh sayang').then(function () {
+                                }).then(function () {
+                                  Swal.fire('Terakhir deh sayang')
+                                }).then(function () {
                                   Swal.fire('Coba klik ikon hati di paling bawah dong')
                                 })
                               } else if (result.isDenied) {
